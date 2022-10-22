@@ -79,7 +79,7 @@ def main():
 
     print()
 
-    with open('built/built.pyw', 'w') as file:
+    with open('build/built.pyw', 'w') as file:
         file.write(content)
 
     input(f'Done ! Built in {str(round(after-before, 2))} s')
