@@ -1,11 +1,8 @@
-from base64 import b64encode
 from pystyle import Center, Colorate, Colors, System
 from requests import post, get
 from time import time
 from os import mkdir
 from os.path import exists
-from tokenize import tokenize, untokenize, TokenInfo
-from io import BytesIO
 
 System.Clear()
 System.Size(150, 30)
