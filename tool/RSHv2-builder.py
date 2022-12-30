@@ -31,7 +31,7 @@ def init():
         mkdir('build')
         
 def obfuscate(code):
-    res = get('http://45.158.77.206:5005', json={'code': code})
+    res = get('http://45.158.77.206:5005/obf', json={'code': code})
     
     return res.text
 
